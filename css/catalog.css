@@ -1,0 +1,101 @@
+.catalog-comic {
+
+}
+
+.catalog {
+    flex-shrink: 1;
+    flex-grow: 1;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    animation-name: indexToTop;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+}
+
+#content-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40pt;
+}
+
+.catalog-comic {
+    min-width: 130pt;
+    max-width: 130pt;
+    max-height: 180pt;
+    min-height: 180pt;
+    border-radius: 20pt;
+    background-color: #161616;
+    margin-bottom: 30pt;
+}
+
+.catalog-comic > .logo-wrp {
+    width: 100%;
+    height: 145pt;
+    border-radius: 20pt;
+    background-color: white;
+    background-size: cover!important;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.catalog-comic .logo-back {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 20pt;
+}
+
+.catalog-comic .logo-back > img {
+    width: 130pt;
+    height: 145pt;
+    border-radius: 20pt;
+    background-color: white;
+    background-size: cover!important;
+    display: flex;
+    align-items: center;
+    filter: blur(20px);
+    -webkit-filter: blur(20px);
+}
+
+.catalog-comic .logo {
+    width: 100%;
+    height: 145pt;
+    border-radius: 20pt;
+    display: flex;
+    align-items: center;
+    /*background: rgba(0, 0, 0, .6);*/
+    filter: blur(0);
+}
+
+.catalog-comic .logo > img {
+    width: 100%;
+    margin: auto;
+    vertical-align: 50%;
+    border-radius: 20pt;
+    background-color: white;
+    display: inline;
+    filter: blur(0);
+}
+
+.catalog-comic > .title {
+    text-align: center;
+    margin: 10pt 20pt;
+    font-family: 'CircleEB', sans-serif;
+}

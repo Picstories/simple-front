@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <!--    <meta http-equiv='X-UA-Compatible' content='IE=edge'>-->
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/page.css'>
+</head>
+<body ng-app='app' ng-controller='pageCtrl'>
+<div class='bcg'></div>
+<div class='wrapper'>
+    <header>
+        <p>{{comic.title + (page.title != '' ? ' &mdash; ' : '') + page.title}}</p>
+    </header>
+    <div class='main-block'>
+        <div class='nav-wrapper'>
+            <div class='nav-point'>
+                <a href='index.html' class='underline'>главная</a>
+                <p>&mdash;на красивую страничку</p>
+            </div>
+            <div class='nav-point'>
+                <a href='favorite.html' class='underline'>избранное</a>
+                <p>&mdash;ваши любимые</p>
+            </div>
+            <div class='nav-point'>
+                <a href='catalog.html' class='underline'>каталог</a>
+                <p>&mdash;все комиксы</p>
+            </div>
+        </div>
+
+        <div id='content-wrapper'>
+            <div id='navigation'>
+                <a class='nav-arrow' href='javascript:void(0);' ng-click="openPage(metadata.pageNumber - 1)">
+                    <img id='nav-prev' src='{{getPreview(-1)}}' alt=''>
+                </a>
+
+                <span id='page-number'>{{metadata.pageNumber}} / {{metadata.pageCount}}</span>
+
+                <a class='nav-arrow' href='javascript:void(0);' ng-click="openPage(metadata.pageNumber - 0 + 1)">
+                    <img id='nav-next' src='{{getPreview(+1)}}' alt=''>
+                </a>
+            </div>
+
+            <div id='images'>
+                <a ng-repeat='image in page.images track by $index'
+                   ng-href='{{getLargeUrl(image)}}' target="_blank">
+                    <img ng-src='{{image.url}}' alt=''>
+                </a>
+            </div>
+
+            <div id="description">
+                {{page.description}}
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class='contacts-wrapper'>
+            <p>contact us:</p>
+            <a href='http://t.me/psvm_16' target='_blank'>
+                <img src='./images/telegram.svg' alt=''>
+            </a>
+        </div>
+    </footer>
+</div>
+</body>
+
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js'></script>
+<script src='js/examples.mjs' type='module'>
+    window.COMICS_EXAMPLE = COMICS_EXAMPLE;
+    window.XKCD_PAGES = XKCD_PAGES;
+    window.XKCD_COMIC = XKCD_COMIC;
+</script>
+<script src='js/page.js'></script>
+
+</html>

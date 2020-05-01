@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/index.css">
+    <script src="main.js"></script>
+</head>
+<body ng-app="app" ng-controller="indexCtrl">
+    <div class='bcg'></div>
+    <div class='wrapper'>
+        <header>
+            <p>&mdash;универсальная платформа для чтения комиксов</p>
+        </header>
+        <div class='main-block'>
+            <div class='nav-wrapper'>
+               <div class='nav-point'>
+                   <a href="./catalog.html" class='underline'>топ</a>
+                   <p>&mdash;самые популярные</p>
+               </div>
+               <div class='nav-point'>
+                    <a href="./catalog.html" class='underline'>рекомендации</a>
+                    <p>&mdash;наш выбор</p>
+                </div>
+                <div class='nav-point'>
+                    <a href="catalog.html" class='underline'>каталог</a>
+                    <p>&mdash;все комиксы</p>
+                </div>
+            </div>
+            <div id='content-wrapper'>
+                <p>PIC</p>
+                <p>STORIES</p>
+                <div class='search-wrapper'>
+                    <a href="./catalog.html" ng-click="">
+                        <img src="./images/magnifying-glass.svg" alt=""> 
+                    </a>
+                    <input type="text" placeholder="поиск по названию и описанию">
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class='contacts-wrapper'>
+                <p>contact us:</p>
+                <a href="http://t.me/psvm_16" target="_blank">
+                    <img src="./images/telegram.svg" alt="">
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="/js/index.js"></script>
+
+</html>

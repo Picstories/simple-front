@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/catalog.css">
+</head>
+<body ng-app="app" ng-controller="catalogCtrl">
+<div class='bcg'></div>
+<div class='wrapper'>
+    <header>
+        <p>&mdash;{{onpageCount(comics.length, metadata.total)}}</p>
+    </header>
+    <div class='main-block'>
+        <div class='nav-wrapper'>
+            <div class='nav-point'>
+                <a href="index.html" class='underline'>главная</a>
+                <p>&mdash;на красивую страничку</p>
+            </div>
+            <div class='nav-point'>
+                <a href="favorite.html" class='underline'>избранное</a>
+                <p>&mdash;ваши любимые</p>
+            </div>
+            <div class='nav-point'>
+                <a href="top.html" class='underline'>избранное</a>
+                <p>&mdash;самые популярные</p>
+            </div>
+        </div>
+
+        <div id='content-wrapper'>
+            <div class="catalog-comic" ng-repeat="comic in comics track by $index" title="{{comic.title}}">
+                <a class="logo-wrp" href="page.html?comic={{comic.id}}&page=1">
+                    <div class="logo-back">
+                        <img src="{{comic.logoUrl}}" alt=""> <!-- blured -->
+                    </div>
+                    <div class="logo">
+                        <img src="{{comic.logoUrl}}" alt="{{comic.title}} logo">
+                    </div>
+                </a>
+                <div class="title" title="{{comic.title}}">
+                    {{shortenString(comic.title, 15)}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class='contacts-wrapper'>
+            <p>contact us:</p>
+            <a href="http://t.me/psvm_16" target="_blank">
+                <img src="./images/telegram.svg" alt="">
+            </a>
+        </div>
+    </footer>
+</div>
+</body>
+
+<script src="js/examples.mjs" type="module">
+    window.COMICS_EXAMPLE = COMICS_EXAMPLE;
+    console.log(COMICS_EXAMPLE);
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="js/catalog.js"></script>
+
+</html>
